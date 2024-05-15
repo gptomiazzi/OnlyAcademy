@@ -38,15 +38,16 @@ export const UserData = styled.View`
     justify-content: center;
 `;
 
-export const UserDataText = styled.Text`
+export const BlackText = styled.Text`
     font-size: 16px;
     color: black;
+    font-family: ${({theme}) => theme.fonts.regular};
 `;
 
-export const UserDataTextBold = styled.Text`
+export const BlackBoldText = styled.Text`
     font-size: 16px;
     color: black;
-    font-weight: 700;
+    font-family: ${({theme}) => theme.fonts.bold};
     margin-bottom: 7px;
 `;
 
@@ -64,4 +65,29 @@ export const ButtonWrapper = styled.View`
     justify-content: space-between;
     width: 260px;
     margin-top: 10px;
+`;
+
+export const CategoriesContainer = styled.View`
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    gap: 20px;
+`;
+
+export const MediaCard = styled.View`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    background-color: #fefefe;
+    width: 100%;
+    height: 45%;
+    border-radius: 50px;
+    overflow: hidden;
+`;
+
+export const CardImage = styled.Image`
+    width: 93%;
+    height: 93%; 
+    border-Radius: 50px;
 `;
