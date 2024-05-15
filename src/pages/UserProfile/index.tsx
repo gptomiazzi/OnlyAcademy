@@ -1,9 +1,11 @@
 import React from "react";
-import { Button, Image, Text, View } from "react-native";
+import { Image, Text } from "react-native";
 import { RoundedFooter } from "../../components/RoundedFooter/style";
-import { Header, UserData, DataContainer, UserDataText, UserDataContainer, DescriptionCotainer, UserDataTextBold, ButtonWrapper, SafeButtonsWrapper} from "./styles"
+import { Header, UserData, DataContainer, UserDataContainer, DescriptionCotainer, ButtonWrapper, SafeButtonsWrapper, CategoriesContainer, BlackBoldText, BlackText, MediaCard, CardImage} from "./styles"
 import {CircleContainer, CircleImage} from "../../components/CircleContainer/style";
 import { CustomProfileButton } from "../../components/CustomProfileButton";
+import { AntDesign } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 const img = require('../../assets/background.png');
 
@@ -14,10 +16,10 @@ function UserProfile() {
 
         <SafeButtonsWrapper>
           <CircleContainer size={44} color="#E6EEFA">
-            
+            <AntDesign name="arrowleft" size={24} color="black" />
           </CircleContainer>
           <CircleContainer size={44} color="#E6EEFA">
-
+            <Entypo name="message" size={24} color="black" />
           </CircleContainer>
         </SafeButtonsWrapper>
       </Header>
@@ -35,17 +37,17 @@ function UserProfile() {
         <UserDataContainer>
           <DataContainer>
             <UserData>
-              <UserDataTextBold>1K</UserDataTextBold>
-              <UserDataText>Followers</UserDataText>
+              <BlackBoldText>1K</BlackBoldText>
+              <BlackText>Followers</BlackText>
             </UserData>
             <UserData>
-              <UserDataTextBold>342</UserDataTextBold>
-              <UserDataText>Following</UserDataText>
+              <BlackBoldText>342</BlackBoldText>
+              <BlackText>Following</BlackText>
             </UserData>
           </DataContainer>
 
         <DescriptionCotainer>
-          <UserDataTextBold>@gabtomiazzi</UserDataTextBold>
+          <BlackBoldText>@gabtomiazzi</BlackBoldText>
           <Text style={{ fontSize: 16, color: '#6C7A9C' }}>
             Hello! I'm Gabriel. I like programming and I know how to play some percussion stuff =D
           </Text>
@@ -55,6 +57,14 @@ function UserProfile() {
           <CustomProfileButton title="Follow" textColor="#FFFFFF"/>
           <CustomProfileButton title="Message" color="#FFFFFF"/>
         </ButtonWrapper>
+        <CategoriesContainer>
+          <BlackText style={{ textDecorationLine: 'underline', textDecorationColor: '#6C7A9C' }}>All</BlackText>
+          <BlackText>Photo</BlackText>
+          <BlackText>Video</BlackText>
+        </CategoriesContainer>
+        <MediaCard>
+          <CardImage source={require('../../assets/lindo.jpg')} />
+        </MediaCard>
       </RoundedFooter>
     </> 
   );
