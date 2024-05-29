@@ -2199,6 +2199,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@stripe/stripe-react-native@npm:^0.38.0":
+  version: 0.38.0
+  resolution: "@stripe/stripe-react-native@npm:0.38.0"
+  peerDependencies:
+    expo: ">=46.0.9"
+    react: "*"
+    react-native: "*"
+  peerDependenciesMeta:
+    expo:
+      optional: true
+  checksum: 5544eeaa7cae0a65ddf7a435e231d580496a5d940db6bd1b2c95cbd8d16ae014115e9378f1560315f5e213b6ab0a370171ee908c161f120be04709c29d221cce
+  languageName: node
+  linkType: hard
+
 "@tsconfig/react-native@npm:^3.0.5":
   version: 3.0.5
   resolution: "@tsconfig/react-native@npm:3.0.5"
@@ -6749,6 +6763,7 @@ __metadata:
     "@babel/core": ^7.20.0
     "@expo-google-fonts/poppins": ^0.2.3
     "@expo/vector-icons": ^14.0.2
+    "@stripe/stripe-react-native": ^0.38.0
     "@tsconfig/react-native": ^3.0.5
     "@types/jest": ^29.5.12
     "@types/react": ^18.3.2
