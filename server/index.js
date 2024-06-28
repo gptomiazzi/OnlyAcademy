@@ -8,22 +8,32 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(cors());
 
-app.post('/payment-test', async (_req, res) => {
-  const customer = await stripe.customers.create();
-  const paymentIntent = await stripe.paymentIntents.create({
-    amount: 1000,
-    currency: 'brl',
-    customer: customer.id,
-    automatic_payment_methods: {
-      enabled: true,
-    }
-  });
+app.post('/monthly', async (_req, res) =>{
+  try {
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: 2500,
+      currency: 'BRL'
+    })
 
-  res.json({
-    paymentIntent: paymentIntent.client_secret,
-    customer: customer.id,
-    publishableKey: 'pk_test_51PIb3w046m3vjyit5zcqiV3NuE2JLJItfvCZpi6V63LpVUyW1S6JRwpGhTmrAlFf7HH2ydCQeIJ0gRPJN96Bkfuu00BibGcQuK'
-  });
+    res.status(200).json({ clientSecret: paymentIntent.client_secret });
+  } catch (error) {
+    console.error('Erro ao criar PaymentIntent: ', error.message);
+    res.status(400).json({ error: 'Erro ao criar PaymentIntent' })
+  }
+})
+
+app.post('/annually', async (_req, res) =>{
+  try {
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: 15000,
+      currency: 'BRL'
+    })
+
+    res.status(200).json({ clientSecret: paymentIntent.client_secret });
+  } catch (error) {
+    console.error('Erro ao criar PaymentIntent: ', error.message);
+    res.status(400).json({ error: 'Erro ao criar PaymentIntent' })
+  }
 })
 
 app.listen(3000, () => {

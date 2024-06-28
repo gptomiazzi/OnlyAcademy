@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 import { TouchableOpacity, Text } from 'react-native';
 
 type ButtonProps = {
-  onPress?: () => void;
+  onPress?: Function;
   title?: string;
   textColor?: string;
   color?: string;
@@ -24,7 +24,7 @@ const ButtonText = styled.Text<ButtonProps>`
   font-size: 16px;
 `;
 
-export const CustomProfileButton: React.FC<ButtonProps> = ({ onPress, title, color, textColor }) => (
+export const Button: React.FC<ButtonProps> = ({ onPress, title, color, textColor }) => (
   <ButtonContainer onPress={onPress} color={color}>
     <ButtonText textColor={textColor}>{title}</ButtonText>
   </ButtonContainer>

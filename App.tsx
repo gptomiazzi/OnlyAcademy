@@ -1,10 +1,8 @@
 import { useFonts } from 'expo-font';
-import UserProfile from './src/pages/UserProfile';
 import { Poppins_400Regular, Poppins_700Bold } from '@expo-google-fonts/poppins';
 import { ThemeProvider } from 'styled-components/native';
 import theme from './src/global/theme';
-import { StripeProvider } from '@stripe/stripe-react-native';
-import Payment from './src/pages/Payment';
+import Routes from './src/routes';
 
 export default function App() {
 
@@ -15,7 +13,7 @@ export default function App() {
 
   return (
       <ThemeProvider theme={theme}>
-        <Payment />
+        <Routes />
       </ThemeProvider>
   );
 }

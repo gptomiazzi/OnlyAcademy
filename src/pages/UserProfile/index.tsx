@@ -3,13 +3,13 @@ import { Image, Text } from "react-native";
 import { RoundedFooter } from "../../components/RoundedFooter/style";
 import { Header, UserData, DataContainer, UserDataContainer, DescriptionCotainer, ButtonWrapper, SafeButtonsWrapper, CategoriesContainer, BlackBoldText, BlackText, MediaCard, CardImage} from "./styles"
 import {CircleContainer, CircleImage} from "../../components/CircleContainer/style";
-import { CustomProfileButton } from "../../components/CustomProfileButton";
+import { Button } from "../../components/Button";
 import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
 const img = require('../../assets/background.png');
 
-function UserProfile() {
+export default function UserProfile() {
   return(
     <>
       <Header source={img}>
@@ -54,8 +54,8 @@ function UserProfile() {
         </DescriptionCotainer>  
         </UserDataContainer>
         <ButtonWrapper>
-          <CustomProfileButton title="Follow" textColor="#FFFFFF"/>
-          <CustomProfileButton title="Message" color="#FFFFFF"/>
+          <Button title="Follow" textColor="#FFFFFF"/>
+          <Button title="Message" color="#FFFFFF"/>
         </ButtonWrapper>
         <CategoriesContainer>
           <BlackText style={{ textDecorationLine: 'underline', textDecorationColor: '#6C7A9C' }}>All</BlackText>
@@ -69,5 +69,3 @@ function UserProfile() {
     </> 
   );
 };
-
-export default UserProfile;
